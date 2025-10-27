@@ -1,272 +1,234 @@
-<html lang="en">
-
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <title>Peli.Fix</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+  <title>Peli.Fix</title>
+
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-container">
-            <div class="logo-container">
-                <h1 class="logo">Peli.Fix</h1>
-            </div>
-            <div class="menu-container">
-                <ul class="menu-list">
-                    <li class="menu-list-item active">Home</li>
-                    <li class="menu-list-item">Peliculas</li>
-                    <li class="menu-list-item">Series</li>
-                    <li class="menu-list-item">Popular</li>
-                    <li class="menu-list-item">Trends</li>
 
-                </ul>
+  <header>
+    <nav class="navbar navbar-dark bg-black fixed-top">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+    
+        <a class="navbar-brand fw-bold ms-2" href="#">
+        <i class="fa-solid fa-film me-1"></i>Peli.Fix
+        </a>
 
-            </div>
-            <div class="profile-container">
-                <img class="profile-picture" src="Imagenes/profile-picture.png" alt="">
-                <div class="profile-text-container">
-                    <span class="profile-text">Profile</span>
-                    <i class="fas fa-caret-down"></i>
-                </div>
-                <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
-                </div>
-            </div>
-        </div>          
+    <div class="theme-toggle" id="themeToggle">
+      <i class="fa-solid fa-moon"></i>
+      <i class="fa-solid fa-sun"></i>
+      <span class="toggle-ball"></span>
     </div>
-    <div class="sidebar">
-        <div class="search-box">
-        <i class="left-menu-icon fas fa-search"></i>
-        <input type="text" class="search-input" placeholder="Buscar...">
-    </div>
-        <i class="left-menu-icon fas fa-home"></i>
-        <i class="left-menu-icon fas fa-users"></i>
-        <i class="left-menu-icon fas fa-bookmark"></i>
-        <i class="left-menu-icon fas fa-tv"></i>
-        <i class="left-menu-icon fas fa-hourglass-start"></i>
-        <i class="left-menu-icon fas fa-shopping-cart"></i>
+  </div>
+</nav>
+  </header>
+
+  <aside class="sidebar">
+
+    <div class="search-box">
+      <i class="left-menu-icon fas fa-search" aria-hidden="true"></i>
+      <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar"/>
     </div>
 
- <div class="container">
-        <div class="content-container">
-        <div class="featured-content"
-            style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('Imagenes/blackphone.jpg') center/cover no-repeat;">
-                <img class="featured-title" src="Imagenes/blackphone.jpg" alt="">
-                <p class="featured-desc">La historia nos adentra en un lúgubre sótano insonorizado cuyas paredes están manchadas con la sangre de las víctimas que anteriormente estuvieron allí cautivas. Colgado de esas mismas paredes hay un teléfono. Está desconectado, pero cuando ese teléfono comienza a sonar, a través de él pueden escucharse las voces de los niños que un siniestro enmascarado secuestró y asesinó. El Captor está de vuelta en una nueva entrega cargada de suspense, acción y horror. </p>
-                <button class="featured-button">Ver pelicula</button>
+    <button class="btn-icon" aria-label="Inicio"><i class="left-menu-icon fas fa-home"></i></button>
+    <button class="btn-icon" aria-label="Usuarios"><i class="left-menu-icon fas fa-users"></i></button>
+    <button class="btn-icon" aria-label="Marcados"><i class="left-menu-icon fas fa-bookmark"></i></button>
+    <button class="btn-icon" aria-label="TV"><i class="left-menu-icon fas fa-tv"></i></button>
+    <button class="btn-icon" aria-label="Recientes"><i class="left-menu-icon fas fa-hourglass-start"></i></button>
+    <button class="btn-icon" aria-label="Carrito"><i class="left-menu-icon fas fa-shopping-cart"></i></button>
+  </aside>
+
+
+  <main id="main" class="pt-5">
+
+    <section class="hero container-fluid">
+      <div class="hero__content">
+        <h1 class="display-5 fw-bold">Black Phone</h1>
+        <p class="lead text-black-50 mb-4">La historia nos adentra en un lúgubre sótano insonorizado cuyas paredes están manchadas con la sangre de las víctimas 
+                que anteriormente estuvieron allí cautivas. Colgado de esas mismas paredes hay un teléfono. 
+                Está desconectado, pero cuando ese teléfono comienza a sonar, a través de él pueden escucharse las voces de los niños 
+                que un siniestro enmascarado secuestró y asesinó. El Captor está de vuelta en una nueva entrega cargada de suspense, acción y horror. </p>
+        <a class="btn btn-success btn-lg" href="#" role="button">Ver película</a>
+      </div>
+    </section>
+
+    <section class="container-fluid py-5" aria-labelledby="nuevosTitle">
+      <h2 id="nuevosTitle" class="section-title">Nuevos Lanzamientos</h2>
+      <div class="row g-4" id="gridNuevos">
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/frankie.png" class="card-img-top" alt="Poster de Frankie">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Frankie</h3>
+            <p class="card-text small clamp-5">
+                En un castillo-laboratorio situado en lo alto de la pequeña ciudad de Tarados de Arriba, 
+                el más loco de los profesores locos despierta monstruosas creaciones a la Casi-Vida... para luego olvidarse rápidamente de ellas. 
+                ¿Quién cuida del castillo? ¿Quién cuida de los monstruos? ¿Quién les enseña a no ser monstruosos, para que la gente del pueblo 
+                no forme una turba enfurecida y queme el castillo?              
+            </p>
+              <button class="btn btn-success btn-sm">Ver</button>
             </div>
-            <div class="movie-list-container">
-                <h1 class="movie-list-title">Nuevos Lanzamientos </h1>
-                <div class="movie-list-wrapper">
-                    <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/frankie.png" alt="">
-                            <span class="movie-list-item-title">Frankie</span>
-                            <p class="movie-list-item-desc">En un castillo-laboratorio situado en lo alto de la pequeña ciudad de Tarados de Arriba, 
-                                el más loco de los profesores locos despierta monstruosas creaciones a la Casi-Vida... para luego olvidarse rápidamente de ellas. 
-                                ¿Quién cuida del castillo? ¿Quién cuida de los monstruos? ¿Quién les enseña a no ser monstruosos, para que la gente del pueblo 
-                                no forme una turba enfurecida y queme el castillo? </p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/chainsaw.jpg" alt="">
-                            <span class="movie-list-item-title">Chainsaw</span>
-                            <p class="movie-list-item-desc">Denji trabajaba como cazador de demonios para la yakuza, intentando saldar la deuda 
-                                que heredó de sus padres, hasta que la yakuza lo traicionó y lo mandó matar. Mientras perdía el conocimiento, Pochita, la 
-                                querida perra diabólica de Denji, impulsada por una motosierra, hizo un trato con él y le salvó la vida.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/goodboy.jpg" alt="">
-                            <span class="movie-list-item-title">Good Boy</span>
-                            <p class="movie-list-item-desc">Un perro leal se muda a una casa rural con su dueño Todd. 
-                                Allí descubre fuerzas sobrenaturales que acechan en las sombras. Mientras oscuras entidades amenazan a su compañero 
-                                humano, el valiente cachorro debe luchar para proteger a quien más quiere.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/jujutsu.jpg" alt="">
-                            <span class="movie-list-item-title">Jujutsu Kaisen</span>
-                            <p class="movie-list-item-desc">Yuka Okkotsu obtiene el control de una maldición extremadamente poderosa y acaba inscrito 
-                                en el Colegio Técnico de Magia Metropolitana de Tokio, donde otros hechiceros deciden ayudarlo a 
-                                controlar y vigilar su poder.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/kpophunter.jpg" alt="">
-                            <span class="movie-list-item-title">Kpop Demon Hunters</span>
-                            <p class="movie-list-item-desc">Un supergrupo de k-pop usa sus poderes secretos para proteger a sus fans de amenazas 
-                                sobrenaturales y de una banda rival de chicos decididos a robar corazones y mentes.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/mononoke.jpg" alt="">
-                            <span class="movie-list-item-title">Mononoke</span>
-                            <p class="movie-list-item-desc">Con el fin de curar la herida que le ha causado un jabalí enloquecido, el joven Ashitaka
-                                 sale en busca del dios Ciervo, pues sólo él puede liberarlo del sortilegio. A lo largo de su periplo descubre cómo
-                                  los animales del bosque luchan contra hombres que están dispuestos a destruir la Naturaleza.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/noise.jpg" alt="">
-                            <span class="movie-list-item-title">Noise</span>
-                            <p class="movie-list-item-desc">El profesor universitario Jack Gladney y su familia ven alterada su vida cuando una fuga 
-                                de productos químicos provoca un "Evento Tóxico en el Aire", liberando una nociva nube negra sobre la región que obliga 
-                                a la familia Gladney a evacuar.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
+          </div>
+        </article>
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/chainsaw.jpg" class="card-img-top" alt="Poster de Chainsaw Man">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Chainsaw Man</h3>
+              <p class="card-text small clamp-5">
+                    Denji trabajaba como cazador de demonios para la yakuza, intentando saldar la deuda 
+                    que heredó de sus padres, hasta que la yakuza lo traicionó y lo mandó matar. Mientras perdía el conocimiento, Pochita, la 
+                    querida perra diabólica de Denji, impulsada por una motosierra, hizo un trato con él y le salvó la vida.</p>
+              <button class="btn btn-success btn-sm">Ver</button>
             </div>
-            <div class="featured-content"
-                style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('Imagenes/zootopia.png')center/cover no-repeat;">
-                <img class="featured-title" src="Imagenes/zootopia.png" alt="">
-                <p class="featured-desc">Zootopia 2 es una cinta animada de aventura, secuela del éxito de 2016, que sigue la historia de la 
+          </div>
+        </article>
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/goodboy.jpg" class="card-img-top" alt="Poster de Good Boy">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Good Boy</h3>
+              <p class="card-text small clamp-5">
+                Un perro leal se muda a una casa rural con su dueño Todd. 
+                Allí descubre fuerzas sobrenaturales que acechan en las sombras. Mientras oscuras entidades amenazan a su compañero 
+                humano, el valiente cachorro debe luchar para proteger a quien más quiere.</p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/jujutsu.jpg" class="card-img-top" alt="Poster de Jujutsu Kaisen">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Jujutsu Kaisen</h3>
+              <p class="card-text small clamp-5">
+                    Yuka Okkotsu obtiene el control de una maldición extremadamente poderosa y acaba inscrito 
+                    en el Colegio Técnico de Magia Metropolitana de Tokio, donde otros hechiceros deciden ayudarlo a 
+                    controlar y vigilar su poder</p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container-fluid py-5" aria-labelledby="popularTitle">
+      <h2 id="popularTitle" class="section-title">Popular</h2>
+      <div class="row g-4">
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/kpophunter.jpg" class="card-img-top" alt="Poster Kpop Demon Hunters">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Kpop Demon Hunters</h3>
+              <p class="card-text small clamp-5">
+                    Un supergrupo de k-pop usa sus poderes secretos para proteger a sus fans de amenazas 
+                    sobrenaturales y de una banda rival de chicos decididos a robar corazones y mentes. </p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/mononoke.jpg" class="card-img-top" alt="Poster Mononoke">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Mononoke</h3>
+              <p class="card-text small clamp-5">
+                Con el fin de curar la herida que le ha causado un jabalí enloquecido, el joven Ashitaka
+                sale en busca del dios Ciervo, pues sólo él puede liberarlo del sortilegio. A lo largo de su periplo descubre cómo
+                los animales del bosque luchan contra hombres que están dispuestos a destruir la Naturaleza.</p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/noise.jpg" class="card-img-top" alt="Poster White Noise">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Noise</h3>
+              <p class="card-text small clamp-5">
+                    El profesor universitario Jack Gladney y su familia ven alterada su vida cuando una fuga 
+                    de productos químicos provoca un "Evento Tóxico en el Aire", liberando una nociva nube negra sobre la región que obliga 
+                    a la familia Gladney a evacuar.</p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/zootopia.png" class="card-img-top" alt="Poster Zootopia">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Zootopia</h3>
+              <p class="card-text small clamp-5">
+                    Zootopia 2 es una cinta animada de aventura, secuela del éxito de 2016, que sigue la historia de la 
                     valiente coneja policía Judy Hopps, quien, con la ayuda de su amigo, el zorro Nick Wilde, deberá resolver un nuevo caso, 
-                    el más peligroso y complejo de su vida y carrera.</p>
-                <button class="featured-button">Ver pelicula</button>
+                    el más peligroso y complejo de su vida y carrera</p>
+              <button class="btn btn-success btn-sm">Ver</button>
             </div>
-            <div class="movie-list-container">
-                <h1 class="movie-list-title">Popular</h1>
-                <div class="movie-list-wrapper">
-                    <div class="movie-list">
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/frankie.png" alt="">
-                            <span class="movie-list-item-title">Frankie</span>
-                            <p class="movie-list-item-desc">En un castillo-laboratorio situado en lo alto de la pequeña ciudad de Tarados de Arriba, 
-                                el más loco de los profesores locos despierta monstruosas creaciones a la Casi-Vida... para luego olvidarse rápidamente de ellas. 
-                                ¿Quién cuida del castillo? ¿Quién cuida de los monstruos? ¿Quién les enseña a no ser monstruosos, para que la gente del 
-                                pueblo no forme una turba enfurecida y queme el castillo? </p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/chainsaw.jpg" alt="">
-                            <span class="movie-list-item-title">Chainsaw</span>
-                            <p class="movie-list-item-desc">Denji trabajaba como cazador de demonios para la yakuza, intentando saldar la deuda que 
-                                heredó de sus padres, hasta que la yakuza lo traicionó y lo mandó matar. Mientras perdía el conocimiento, Pochita, 
-                                la querida perra diabólica de Denji, impulsada por una motosierra, hizo un trato con él y le salvó la vida.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/goodboy.jpg" alt="">
-                            <span class="movie-list-item-title">Good Boy</span>
-                            <p class="movie-list-item-desc">Un perro leal se muda a una casa rural con su dueño Todd. Allí descubre fuerzas 
-                                sobrenaturales que acechan en las sombras. Mientras oscuras entidades amenazan a su compañero humano, el valiente 
-                                cachorro debe luchar para proteger a quien más quiere.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/jujutsu.jpg" alt="">
-                            <span class="movie-list-item-title">Jujutsu Kaisen</span>
-                            <p class="movie-list-item-desc">Yuka Okkotsu obtiene el control de una maldición extremadamente poderosa y acaba 
-                                inscrito en el Colegio Técnico de Magia Metropolitana de Tokio, donde otros hechiceros deciden ayudarlo a controlar 
-                                y vigilar su poder.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/kpophunter.jpg" alt="">
-                            <span class="movie-list-item-title">Kpop Demon Hunters</span>
-                            <p class="movie-list-item-desc">Un supergrupo de k-pop usa sus poderes secretos para proteger a sus fans de amenazas 
-                                sobrenaturales y de una banda rival de chicos decididos a robar corazones y mentes.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/mononoke.jpg" alt="">
-                            <span class="movie-list-item-title">Mononoke</span>
-                            <p class="movie-list-item-desc">Con el fin de curar la herida que le ha causado un jabalí enloquecido, el joven Ashitaka 
-                                sale en busca del dios Ciervo, pues sólo él puede liberarlo del sortilegio. A lo largo de su periplo descubre cómo los 
-                                animales del bosque luchan contra hombres que están dispuestos a destruir la Naturaleza.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/noise.jpg" alt="">
-                            <span class="movie-list-item-title">Noise</span>
-                            <p class="movie-list-item-desc">El profesor universitario Jack Gladney y su familia ven alterada su vida cuando una fuga 
-                                de productos químicos provoca un "Evento Tóxico en el Aire", liberando una nociva nube negra sobre la región que obliga a
-                                 la familia Gladney a evacuar.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
-            </div>
-            <div class="movie-list-container">
-                <h1 class="movie-list-title">Aclamados por la critica</h1>
-                <div class="movie-list-wrapper">
-                    <div class="movie-list">
-                        <div class="movie-list-item">
-                           <img class="movie-list-item-img" src="Imagenes/frankie.png" alt="">
-                            <span class="movie-list-item-title">Frankie</span>
-                            <p class="movie-list-item-desc">En un castillo-laboratorio situado en lo alto de la pequeña ciudad de Tarados de Arriba, 
-                                el más loco de los profesores locos despierta monstruosas creaciones a la Casi-Vida... para luego olvidarse rápidamente de ellas. 
-                                ¿Quién cuida del castillo? ¿Quién cuida de los monstruos? ¿Quién les enseña a no ser monstruosos, para que la gente del 
-                                pueblo no forme una turba enfurecida y queme el castillo?</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/chainsaw.jpg" alt="">
-                            <span class="movie-list-item-title">Chainsaw</span>
-                            <p class="movie-list-item-desc">Denji trabajaba como cazador de demonios para la yakuza, intentando saldar la deuda que heredó 
-                                de sus padres, hasta que la yakuza lo traicionó y lo mandó matar. Mientras perdía el conocimiento, Pochita, la querida perra 
-                                diabólica de Denji, impulsada por una motosierra, hizo un trato con él y le salvó la vida.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/goodboy.jpg" alt="">
-                            <span class="movie-list-item-title">Good Boy</span>
-                            <p class="movie-list-item-desc">Un perro leal se muda a una casa rural con su dueño Todd. Allí descubre fuerzas sobrenaturales 
-                                que acechan en las sombras. Mientras oscuras entidades amenazan a su compañero humano, el valiente cachorro debe luchar para 
-                                proteger a quien más quiere.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/jujutsu.jpg" alt="">
-                            <span class="movie-list-item-title">Jujutsu Kaisen</span>
-                            <p class="movie-list-item-desc">Yuka Okkotsu obtiene el control de una maldición extremadamente poderosa y acaba inscrito en 
-                                el Colegio Técnico de Magia Metropolitana de Tokio, donde otros hechiceros deciden ayudarlo a controlar y vigilar su poder.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/kpophunter.jpg" alt="">
-                            <span class="movie-list-item-title">Kpop Demon Hunters</span>
-                            <p class="movie-list-item-desc">Un supergrupo de k-pop usa sus poderes secretos para proteger a sus fans de amenazas 
-                                sobrenaturales y de una banda rival de chicos decididos a robar corazones y mentes.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/mononoke.jpg" alt="">
-                            <span class="movie-list-item-title">Mononoke</span>
-                            <p class="movie-list-item-desc">Con el fin de curar la herida que le ha causado un jabalí enloquecido, el joven Ashitaka 
-                                sale en busca del dios Ciervo, pues sólo él puede liberarlo del sortilegio. A lo largo de su periplo descubre cómo los 
-                                animales del bosque luchan contra hombres que están dispuestos a destruir la Naturaleza.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="Imagenes/noise.jpg" alt="">
-                            <span class="movie-list-item-title">Noise</span>
-                            <p class="movie-list-item-desc">El profesor universitario Jack Gladney y su familia ven alterada su vida cuando una fuga de 
-                                productos químicos provoca un "Evento Tóxico en el Aire", liberando una nociva nube negra sobre la región que obliga 
-                                a la familia Gladney a evacuar.</p>
-                            <button class="movie-list-item-button">Ver</button>
-                        </div>
-                    </div>
-                    <i class="fas fa-chevron-right arrow"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="app.js"></script>
-</body>
+          </div>
+        </article>
+      </div>
+    </section>
 
+
+    <section class="container-fluid py-5" aria-labelledby="criticaTitle">
+      <h2 id="criticaTitle" class="section-title">Aclamados por la crítica</h2>
+      <div class="row g-4">
+
+        <article class="col-12 col-sm-6 col-md-3">
+          <div class="card movie-card h-100">
+            <img src="Imagenes/frankie.png" class="card-img-top" alt="Poster Frankie">
+            <div class="card-body">
+              <h3 class="card-title h5 fw-bold">Frankie</h3>
+              <p class="card-text small clamp-5">
+                En un castillo-laboratorio situado en lo alto de la pequeña ciudad de Tarados de Arriba, 
+                el más loco de los profesores locos despierta monstruosas creaciones a la Casi-Vida... para luego olvidarse rápidamente de ellas. 
+                ¿Quién cuida del castillo? ¿Quién cuida de los monstruos? ¿Quién les enseña a no ser monstruosos, para que la gente del pueblo 
+                no forme una turba enfurecida y queme el castillo?</p>
+              <button class="btn btn-success btn-sm">Ver</button>
+            </div>
+          </div>
+        </article>
+   
+      </div>
+    </section>
+
+
+    <section class="container py-5" aria-labelledby="comentariosTitle">
+      <h2 id="comentariosTitle" class="section-title">Comentarios</h2>
+      <div class="comments" data-movie-id="frankie">
+        <ul class="comments-list mb-3"></ul>
+        <form class="comments-form row g-2">
+          <div class="col-12 col-sm-4">
+            <input type="text" class="form-control bg-dark text-white border-0" name="author" placeholder="Tu nombre" required>
+          </div>
+          <div class="col-12 col-sm-6">
+            <textarea class="form-control bg-dark text-white border-0" name="text" rows="2" placeholder="Escribe tu opinión..." required></textarea>
+          </div>
+          <div class="col-12 col-sm-2 d-grid">
+            <button class="btn btn-success" type="submit">Publicar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="container-fluid py-4 text-center text-white-50 small">
+  
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
 </html>
