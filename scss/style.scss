@@ -1,0 +1,265 @@
+/* ===========================
+   Peli.Fix – SCSS principal
+   Requisitos: variables, anidación, interpolación
+   =========================== */
+
+/* ---------- Variables globales (>=5) ---------- */
+$bg-dark: #151515;
+$bg-card: #111111;
+$fg-light: #ffffff;
+$muted:  #bdbdbd;
+$brand:  #e50914;        // rojo marca
+$success: #16a34a;       // verde (por si lo quieres conservar)
+$radius: 16px;
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, .35);
+$sidebar-w: 50px;
+$color: $brand;
+
+/* Map para utilidades (lo usamos en interpolación #1) */
+$btn-variants: (
+  brand:  $brand,
+  success:$brand  // forzamos "success" a rojo marca si usas .btn-success en HTML
+);
+
+/* Breakpoints útiles (opcional) */
+$bp-sm: 576px;
+$bp-md: 768px;
+
+/* ---------- Reset corto ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* ---------- Body + tema claro ---------- */
+html, body {
+  margin: 0;
+  font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  background: $bg-dark;
+  color: $fg-light;
+  overflow-x: hidden;
+
+  /* Tema claro activado con body.light */
+  &.light {
+    background: #ffffff;
+    color: #111111;
+  }
+}
+
+/* Contenedor principal correteado por el sidebar */
+#main { padding-left: $sidebar-w + 10px; }
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background: #000 !important;
+  color: $fg-light !important;
+
+  .navbar-brand { font-weight: 700; }
+  .text-white-50 { color: $muted !important; }
+
+  /* tema claro */
+  body.light & {
+    background: #f8f9fa !important;
+    color: #000 !important;
+  }
+}
+
+/* ---------- Sidebar con íconos ---------- */
+.sidebar{
+  position: fixed;
+  inset: 0 auto 0 0;          // top:0; bottom:0; left:0;
+  width: $sidebar-w;
+  background: $bg-dark;
+  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  .btn-icon{
+    background: transparent;
+    border: 0; padding: 0; cursor: pointer;
+  }
+
+  .left-menu-icon{
+    color: $fg-light; font-size: 20px;
+  }
+
+  /* tema claro */
+  body.light & {
+    background: #ffffff;
+
+    .left-menu-icon{ color: #000 !important; }
+  }
+}
+
+/* ---------- Buscador emergente ---------- */
+.search-box{
+  position: relative; width: 50px; display: flex; justify-content: center;
+
+  .left-menu-icon{ pointer-events: none; }
+
+  .search-input{
+    position: absolute; left: 50px; top: -2px;
+    width: 0; opacity: 0; height: 32px;
+    background: #1e1e1e; color: $fg-light;
+    border: none; outline: none;
+    border-radius: 6px; padding: 0 10px; font-size: 14px;
+    transition: width .35s ease, opacity .35s ease;
+    z-index: 2000;
+  }
+
+  &:hover .search-input{
+    width: 180px; opacity: 1;
+  }
+
+  /* tema claro */
+  body.light & .search-input{
+    background: #f1f1f1; color: #111;
+  }
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  min-height: 60vh;
+  display: grid; align-items: center;
+  padding: 80px 16px 40px;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(21,21,21,1)),
+    url('Imagenes/blackphone.jpg') center/cover no-repeat !important;
+
+  .hero__content{
+    max-width: 900px;
+
+    h1{ 
+      font-weight: 800; 
+      text-shadow: 0 2px 8px rgba(0,0,0,.45);
+    }
+    .lead{ color: $muted; }
+  }
+
+  /* tema claro, mantiene el degradé para legibilidad */
+  body.light & {
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,.35), rgba(21,21,21,.5)),
+      url('Imagenes/blackphone.jpg') center/cover no-repeat !important;
+
+    .lead{ color: #e8e8e8; }
+  }
+}
+
+/* ---------- Títulos de sección ---------- */
+.section-title{
+  font-weight: 800; margin-bottom: 1.25rem;
+}
+
+/* ---------- Movie card (anidación) ---------- */
+.movie-card{
+  background: $bg-card !important;
+  color: $fg-light;
+  border: 0; border-radius: $radius; overflow: hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  img{
+    display: block; margin: 0 auto;
+    width: 100%; height: 220px; object-fit: cover;
+    transition: transform .25s ease, opacity .25s ease;
+  }
+
+  &:hover{
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+
+    img{
+      transform: scale(1.05);
+      opacity: .95;
+    }
+  }
+
+  /* tema claro */
+  body.light & {
+    background: #f5f5f5 !important;
+    color: #000 !important;
+  }
+}
+
+/* ---------- Lista de comentarios ---------- */
+.comments-list{
+  list-style: none; margin: 0; padding: 0;
+
+  li{
+    background: #1a1a1a; border-radius: 10px;
+    padding: .75rem .9rem; margin-bottom: .5rem;
+
+    .meta{
+      font-size: .8rem; opacity: .7; margin-bottom: .25rem;
+    }
+  }
+
+  body.light & li{ background: #efefef; }
+}
+
+/* ---------- Clamp util ---------- */
+.clamp-5{
+  display: -webkit-box;
+  -webkit-line-clamp: 5; line-clamp: 5;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* ---------- Toggle de tema ---------- */
+.theme-toggle{
+  width: 56px; height: 28px;
+  background: #fff; border-radius: 999px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 8px; position: relative;
+
+  i{ font-size: 14px; color: #f1c40f; pointer-events: none; }
+
+  .toggle-ball{
+    position: absolute; top: 4px; left: 4px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: $bg-dark; transition: transform .3s ease;
+  }
+
+  /* cuando body.light, mueve la bolita */
+  body.light & .toggle-ball{
+    transform: translateX(28px); background: #000;
+  }
+}
+
+/* ---------- Botones ----------
+   Interpolación #1: generamos variantes .btn-brand y .btn-success
+   (forzamos success a rojo marca para que tu HTML actual también quede rojo) */
+@each $name, $color in $btn-variants {
+  .btn-#{$name} {
+    background: $color !important;
+    border-color: $color !important;
+    color: #fff !important;
+
+    &:hover,
+    &:focus {
+      background: darken($color, 7%) !important;
+      border-color: darken($brand, 7%) !important;
+      color: #fff !important;
+    }
+  }
+}
+
+/* Si sigues usando .btn-success de Bootstrap, aquí lo dejamos rojo marca */
+.btn-success{
+  @extend .btn-brand;
+}
+
+/* ---------- Secciones con interpolación ----------
+   Interpolación #2: clases utilitarias para secciones por nombre */
+$sections: ("nuevos", "popular", "critica");
+@each $s in $sections {
+  .section--#{$s} {
+    scroll-margin-top: 90px;
+    border-top: 2px solid rgba($fg-light, .07);
+    padding-top: 1rem;
+  }
+}
+
+/* ---------- Responsivo básico ---------- */
+@media (max-width: $bp-sm){
+  #main { padding-left: $sidebar-w + 10px; }
+  .hero { padding-top: 96px; }
+}

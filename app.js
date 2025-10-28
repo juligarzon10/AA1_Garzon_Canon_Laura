@@ -46,7 +46,6 @@ document.querySelectorAll('.comments').forEach(container => {
   });
 });
 
-// ==== Cambio de tema claro/oscuro ====
 const toggle = document.querySelector('.theme-toggle');
 if (toggle) {
   toggle.addEventListener('click', () => {
@@ -54,7 +53,6 @@ if (toggle) {
     localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
   });
 
-  // Mantener tema guardado
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'light') document.body.classList.add('light');
 }
