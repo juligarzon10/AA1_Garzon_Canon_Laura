@@ -1,0 +1,89 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOZq9bQbWiXov+O3C95qVpt",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/juligarzon10/AA1_Garzon_Canon_Laura/blob/master/Taller%20UCompensar%20Python\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 27,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3gG-qxkpc-ro",
+        "outputId": "e69448d1-a153-4d27-b55b-3ad6cdb065e2"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Sistema de informacion\n",
+            "10\n",
+            "El total es:  30\n",
+            ">=10\n",
+            "0\n",
+            "1\n",
+            "2\n",
+            "3\n",
+            "4\n",
+            "5\n",
+            "6\n",
+            "7\n",
+            "8\n",
+            "9\n",
+            "10\n",
+            "La sumatoria es: 27\n"
+          ]
+        }
+      ],
+      "source": [
+        " #sistema\n",
+        " numero1=10\n",
+        " numero2=20\n",
+        " total= numero1+numero2\n",
+        " primernombre=\"Pepito\"\n",
+        " print(\"Sistema de informacion\")\n",
+        " print(numero1)\n",
+        " print(\"El total es: \", total)\n",
+        "\n",
+        " if total >= 10:\n",
+        "    print( \">=10\")\n",
+        " else:\n",
+        "    print (\"no es >=10\")\n",
+        "\n",
+        "n=0\n",
+        "sumatoria=0\n",
+        "while n<=10:\n",
+        "  print(n)\n",
+        "  if n>=2 and n<8:\n",
+        "    sumatoria=sumatoria + n\n",
+        "  n=n+1\n",
+        "print(\"La sumatoria es:\", sumatoria)\n"
+      ]
+    }
+  ]
+}
